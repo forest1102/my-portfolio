@@ -56,7 +56,43 @@
     },
     "en":{
       "title":"Timeline",
-      "career":[]
+      "career":[
+        {
+          "date": "2013",
+          "title": "my first time to participate in Tech Event",
+          "detail": ""
+        },
+        {
+          "date": "2015年3月",
+          "title": "entrance into Yokosuka Sogo High School",
+          "detail": ""
+        },
+        {
+          "date": "2015-2017",
+          "title": "participation in programming competition",
+          "detail": ""
+        },
+        {
+          "date": "2016,2017",
+          "title": "participation in cybersecurity event",
+          "detail": ""
+        },
+        {
+          "date": "​2018年3月",
+          "title": "graduation from Yokosuka Sogo High School",
+          "detail": ""
+        },
+        {
+          "date": "2018年5月",
+          "title": "arrival at Los Angeles",
+          "detail": ""
+        },
+        {
+          "date": "2018年9月",
+          "title": "entrance into Los Angeles City College",
+          "detail": ""
+        }
+      ]
     }
   }
 </i18n>
