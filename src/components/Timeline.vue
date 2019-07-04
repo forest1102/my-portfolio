@@ -1,7 +1,7 @@
 <template lang="pug">
-  SubPage(title="経歴").timeline
+  SubPage(:title="$t('title')").timeline
     v-timeline.fill-height
-      v-timeline-item(v-for="(career, idx) in careers" :key="idx" )
+      v-timeline-item(v-for="(career, idx) in $t('career')" :key="idx" )
         template(v-slot:opposite)
         v-card
           v-card-title
@@ -12,6 +12,55 @@
             p {{career.detail}}
 </template>
 
+<i18n>
+  {
+    "ja":{
+      "title":"経歴",
+      "career":[
+        {
+          "date": "2013",
+          "title": "Life is Tech! 参加",
+          "detail": ""
+        },
+        {
+          "date": "2015年3月",
+          "title": "横須賀総合高校入学",
+          "detail": ""
+        },
+        {
+          "date": "2015-2017",
+          "title": "​パソコン甲子園参加",
+          "detail": ""
+        },
+        {
+          "date": "2016,2017",
+          "title": "高校生セキュリティコンテスト参加",
+          "detail": ""
+        },
+        {
+          "date": "​2018年3月",
+          "title": "横須賀総合高等学校卒業",
+          "detail": ""
+        },
+        {
+          "date": "2018年5月",
+          "title": "アメリカへ留学",
+          "detail": ""
+        },
+        {
+          "date": "2018年9月",
+          "title": "ロサンゼルスシティカレッジに入学",
+          "detail": ""
+        }
+      ]
+    },
+    "en":{
+      "title":"Timeline",
+      "career":[]
+    }
+  }
+</i18n>
+
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator'
 import SubPage from '@/components/SubPage.vue'
@@ -21,50 +70,11 @@ import SubPage from '@/components/SubPage.vue'
     SubPage
   }
 })
-export default class extends Vue {
-  public careers = [
-    {
-      date: '2013',
-      title: 'Life is Tech! 参加',
-      detail: `
-      `
-    },
-    {
-      date: '2015年3月',
-      title: '横須賀総合高校入学',
-      detail: ``
-    },
-    {
-      date: '2015-2017',
-      title: '​パソコン甲子園参加',
-      detail: ``
-    },
-    {
-      date: '2016,2017',
-      title: '高校生セキュリティコンテスト参加',
-      detail: ``
-    },
-    {
-      date: '​2018年3月',
-      title: '横須賀総合高等学校卒業',
-      detail: ``
-    },
-    {
-      date: '2018年5月',
-      title: 'アメリカへ留学',
-      detail: ``
-    },
-    {
-      date: '2018年9月',
-      title: 'ロサンゼルスシティカレッジに入学',
-      detail: ``
-    },
-  ]
-}
+export default class extends Vue {}
 </script>
 
 <style scoped>
-.timeline{
+.timeline {
   height: auto;
   min-height: 100vh;
 }

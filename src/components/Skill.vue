@@ -1,6 +1,6 @@
 <template lang="pug">
 SubPage.skill(
-    title="使用可能言語"
+    :title="$t('title')"
   )
     v-container
       v-layout(column fill-height)
@@ -9,7 +9,7 @@ SubPage.skill(
             v-container(grid-list-lg).pa-0
               v-layout(row wrap)
                 v-flex(v-for="(skill,colKey,colIdx) in skillArr" sm2 xs4 :key="colKey")
-                  v-card(flat tile @click.native="showDetail(skill.title)").clickable
+                  v-card(flat tile ).clickable
                     v-layout(column align-center)
                       v-flex.pb-0
                         v-img( :src="skill.logo" width="72px" height="72px")
@@ -17,94 +17,102 @@ SubPage.skill(
                         p.text-xs-center {{skill.title}}
 </template>
 
+<i18n>
+  {
+    "ja":{
+      "title":"開発可能言語"
+    },
+    "en":{
+      "title":"Skills"
+    }
+  }
+</i18n>
+
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator'
-    import SubPage from '@/components/SubPage.vue'
+import SubPage from '@/components/SubPage.vue'
 
-    @Component({
-      components: {
-        SubPage
-      }
-    })
-    export default class extends Vue {
-      public readonly skill2dArr: { title: string, logo: string } [][] = [
+@Component({
+  components: {
+    SubPage
+  }
+})
+export default class extends Vue {
+  private readonly skill2dArr: { title: string, logo: string } [][] = [
     [
-          {
-            title: 'C/C++',
-            logo: this.impLogo('c++')
-      }
-    ],
-    [
-          {
-            title: 'HTML',
-            logo: this.impLogo('html')
+      {
+        title: 'C/C++',
+        logo: this.impLogo('c++')
       }
     ],
     [
-          {
-            title: 'JavaScript',
-            logo: this.impLogo('js')
+      {
+        title: 'HTML',
+        logo: this.impLogo('html')
+      }
+    ],
+    [
+      {
+        title: 'JavaScript',
+        logo: this.impLogo('js')
       },
-          {
-            title: 'TypeScript',
-            logo: this.impLogo('ts')
+      {
+        title: 'TypeScript',
+        logo: this.impLogo('ts')
       },
-          {
-            title: 'Node.JS',
-            logo: this.impLogo('nodejs')
+      {
+        title: 'Node.JS',
+        logo: this.impLogo('nodejs')
       },
-          {
-            title: 'Vue.JS',
-            logo: this.impLogo('vuejs')
+      {
+        title: 'Vue.JS',
+        logo: this.impLogo('vuejs')
       },
-          {
-            title: 'Google Apps Script',
-            logo: this.impLogo('gas')
+      {
+        title: 'Google Apps Script',
+        logo: this.impLogo('gas')
       }
     ],
     [
-          {
-            title: 'Python',
-            logo: this.impLogo('python')
+      {
+        title: 'Python',
+        logo: this.impLogo('python')
       }
     ],
     [
-          {
-            title: 'Swift',
-            logo: this.impLogo('swift')
+      {
+        title: 'Swift',
+        logo: this.impLogo('swift')
       }
     ],
     [
-          {
-            title: 'AWS lambda',
-            logo: this.impLogo('aws-lambda')
+      {
+        title: 'AWS lambda',
+        logo: this.impLogo('aws-lambda')
       },
-          {
-            title: 'AWS EC2',
-            logo: this.impLogo('aws-ec2')
+      {
+        title: 'AWS EC2',
+        logo: this.impLogo('aws-ec2')
       }
     ],
     [
-          {
-            title: 'Firebase',
-            logo: this.impLogo('firebase')
+      {
+        title: 'Firebase',
+        logo: this.impLogo('firebase')
       }
     ],
     [
-          {
-            title: 'Raspberry PI',
-            logo: this.impLogo('raspberry-pi')
+      {
+        title: 'Raspberry PI',
+        logo: this.impLogo('raspberry-pi')
       }
     ]
   ]
-      private impLogo(name: string) {
-        return require(`@/assets/${name}.svg`)
-      }
 
-      public showDetail(skill: string) {
-        console.log(skill)
-      }
-    }
+  private impLogo(name: string) {
+    return require(`@/assets/${name}.svg`)
+  }
+}
 </script>
 
 <style lang="css" scoped>

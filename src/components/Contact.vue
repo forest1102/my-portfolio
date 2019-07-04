@@ -1,5 +1,5 @@
 <template lang="pug">
-  SubPage(title="コンタクト")
+  SubPage(:title="$t('title')")
     v-list(two-line).transparent
       v-list-tile(avatar v-for="(contact,i,key) in contacts" :key="key")
         v-list-tile-avatar.mr-4
@@ -9,6 +9,17 @@
           v-list-tile-title
             a(:href="contact.href || contact.title").teal--text  {{contact.title}}
 </template>
+
+<i18n>
+  {
+    "ja":{
+      "title":"コンタクト"
+    },
+    "en":{
+      "title":"Contact"
+    }
+  }
+</i18n>
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator'
@@ -20,7 +31,7 @@ import SubPage from '@/components/SubPage.vue'
   }
 })
 export default class extends Vue {
-  readonly contacts = [
+  private readonly contacts = [
     {
       icon: 'email',
       title: 'murabito1ss1@gmail.com',

@@ -12,9 +12,7 @@ import SubPage from '@/components/SubPage.vue'
     SubPage
   }
 })
-export default class extends Vue {
-  created() {}
-}
+export default class extends Vue {}
 </script>
 
 <style scoped>
