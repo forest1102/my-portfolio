@@ -1,29 +1,35 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+<template lang="pug">
+  v-app.grey.lighten-3
+    //-Toolbar
+    v-content
+      Home
+      About
+      Skill
+      //- Portfolio
+      Timeline
+      Contact
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import Home from './components/Home.vue'
+import Toolbar from './components/Toolbar.vue'
+import About from './components/About.vue'
+import Skill from './components/Skill.vue'
+import Portfolio from './components/Portfolio.vue'
+import Timeline from '@/components/Timeline.vue'
+import Contact from '@/components/Contact.vue'
+import { Vue, Component, Prop } from 'vue-property-decorator'
 
 @Component({
   components: {
-    HelloWorld,
-  },
+    Home,
+    Toolbar,
+    About,
+    Skill,
+    Portfolio,
+    Timeline,
+    Contact,
+  }
 })
-export default class App extends Vue {}
+export default class extends Vue {}
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
