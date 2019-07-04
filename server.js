@@ -10,7 +10,7 @@ app.use(history({
 	verbose: true
 }))
 
-app.use(express.static(path.join(__dirname, '/dist')))
+app.use(serveStatic(path.join(__dirname, '/dist')))
 
 var port = process.env.PORT || 5000
 
