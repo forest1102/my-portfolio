@@ -63,7 +63,7 @@
           "detail": ""
         },
         {
-          "date": "2015年3月",
+          "date": "March, 2015",
           "title": "entrance into Yokosuka Sogo High School",
           "detail": ""
         },
@@ -78,17 +78,17 @@
           "detail": ""
         },
         {
-          "date": "​2018年3月",
+          "date": "​March, 2018",
           "title": "graduation from Yokosuka Sogo High School",
           "detail": ""
         },
         {
-          "date": "2018年5月",
+          "date": "May, 2018",
           "title": "arrival at Los Angeles",
           "detail": ""
         },
         {
-          "date": "2018年9月",
+          "date": "Sept., 2018",
           "title": "entrance into Los Angeles City College",
           "detail": ""
         }
