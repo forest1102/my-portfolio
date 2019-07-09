@@ -1,8 +1,5 @@
 <template lang="pug">
   v-toolbar(app)
-    v-toolbar-title.headline.text-uppercase
-      span Vuetify
-      span.font-weight-light MATERIAL DESIGN
     v-spacer
     v-menu(
       bottom
