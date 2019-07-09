@@ -1,12 +1,13 @@
 <template lang="pug">
-v-jumbotron.ma-0(gradient="to right, #2979FF, #BBDEFB" dark height="100vh")
+//-v-img.ma-0(gradient="to right, #2979FF, #BBDEFB" height="100vh" src="//")
+div.home
   v-container(fill-height wrap)
     v-layout(column)
       v-spacer
       v-flex(xs3)
-        h1.display-4.font-weight-bold {{ $t('name') }}
+        h1.display-4.font-weight-bold.white--text {{ $t('name') }}
       v-flex(xs-3)
-        h2.display-3 {{ $t('job') }}
+        h2.display-3.white--text {{ $t('job') }}
 </template>
 
 <i18n>
@@ -25,12 +26,13 @@ v-jumbotron.ma-0(gradient="to right, #2979FF, #BBDEFB" dark height="100vh")
 <script>
 import { Vue, Component, Prop } from 'vue-property-decorator'
 
-@Component()
-export default class extends Vue {}
+@Component({})
+export default class Home extends Vue {}
 </script>
 
 <style scoped>
 .home {
   height: 100vh;
+  background-image: linear-gradient(to top right, #2979FF, #BBDEFB);
 }
 </style>
