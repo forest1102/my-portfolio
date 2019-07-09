@@ -1,6 +1,6 @@
 <template lang="pug">
   v-app.grey.lighten-3
-    //-Toolbar
+    Toolbar
     v-content
       Home
       About
