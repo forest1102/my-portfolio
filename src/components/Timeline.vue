@@ -1,5 +1,5 @@
 <template lang="pug">
-  SubPage(:title="$t('title')").timeline
+  SubPage(:title="$t('title')")#timeline
     v-timeline.fill-height
       v-timeline-item(v-for="(career, idx) in $t('career')" :key="idx" )
         template(v-slot:opposite)
@@ -110,7 +110,7 @@ export default class extends Vue {}
 </script>
 
 <style scoped>
-.timeline {
+#timeline {
   height: auto;
   min-height: 100vh;
 }

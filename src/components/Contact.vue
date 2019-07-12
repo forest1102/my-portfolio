@@ -1,5 +1,5 @@
 <template lang="pug">
-  SubPage(:title="$t('title')")
+  SubPage(:title="$t('title')")#contact
     v-list(two-line).transparent
       v-list-tile(avatar v-for="(contact,i,key) in contacts" :key="key")
         v-list-tile-avatar.mr-4

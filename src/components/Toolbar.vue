@@ -1,5 +1,9 @@
 <template lang="pug">
-  v-toolbar(app)
+  v-toolbar(app dense)
+    v-toolbar-side-icon(
+      v-if="$vuetify.breakpoint.smAndDown"
+      @click="$emit('toggle-drawer')"
+      )
     v-spacer
     v-menu(
       bottom
@@ -11,7 +15,7 @@
           flat
           v-on="menu"
           ) 
-          span {{curLocale.name}}
+          v-icon fas fa-globe
           v-icon arrow_drop_down
       v-list(
         light
@@ -36,7 +40,11 @@ export default class extends Vue {
   }
 
   private changeLocale(locale: string) {
-    this.$router.replace({ params: { locale } })
+    this.$router.push({ params: { locale } })
+  }
+  private link(selector: string) {
+    this.$router.replace({ hash: '' })
+    this.$router.replace({ hash: selector })
   }
 }
 </script>

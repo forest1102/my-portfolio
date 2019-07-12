@@ -1,5 +1,5 @@
 <template lang="pug">
-  SubPage(:title="$t('title')")
+  SubPage(:title="$t('title')")#portfolio
 </template>
 
 <i18n>

@@ -1,5 +1,5 @@
 <template lang="pug">
-SubPage.skill(
+SubPage#skill(
     :title="$t('title')"
   )
     v-container
@@ -116,7 +116,7 @@ export default class extends Vue {
 </script>
 
 <style lang="css" scoped>
-.skill{
+#skill{
   height: auto;
   min-height: 100vh;
 }

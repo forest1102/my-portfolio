@@ -1,5 +1,5 @@
 <template lang="pug">
-SubPage.about(
+SubPage#about(
     :title="$t('title')"
   )
     v-layout(column fill-height)
@@ -101,7 +101,7 @@ export default class extends Vue {}
 </script>
 
 <style scoped>
-.about {
+#about {
   height: auto;
   min-height: 100vh;
 }

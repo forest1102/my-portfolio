@@ -1,6 +1,6 @@
 <template lang="pug">
 //-v-img.ma-0(gradient="to right, #2979FF, #BBDEFB" height="100vh" src="//")
-div.home
+div#home
   v-container(fill-height wrap)
     v-layout(column)
       v-spacer
@@ -31,7 +31,7 @@ export default class Home extends Vue {}
 </script>
 
 <style scoped>
-.home {
+#home {
   height: 100vh;
   background-image: linear-gradient(to top right, #2979FF, #BBDEFB);
 }

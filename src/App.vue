@@ -1,6 +1,7 @@
 <template lang="pug">
   v-app.grey.lighten-3
-    Toolbar
+    Toolbar(@toggle-drawer="drawer=!drawer")
+    Drawer(v-model="drawer")
     v-content
       Home
       About
@@ -18,6 +19,7 @@ import Skill from './components/Skill.vue'
 import Portfolio from './components/Portfolio.vue'
 import Timeline from '@/components/Timeline.vue'
 import Contact from '@/components/Contact.vue'
+import Drawer from '@/components/Drawer.vue'
 import { Vue, Component, Prop } from 'vue-property-decorator'
 
 @Component({
@@ -29,7 +31,10 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
     Portfolio,
     Timeline,
     Contact,
+    Drawer
   }
 })
-export default class extends Vue {}
+export default class extends Vue {
+  private drawer: boolean = false
+}
 </script>
