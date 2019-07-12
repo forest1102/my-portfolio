@@ -23,7 +23,7 @@ v-navigation-drawer(
       @click="link(menu.to)"
       )
       v-list-tile-action
-        v-icon {{menu.icon}}
+        v-icon(:color="(menu.to===$route.hash)? 'teal':''") {{menu.icon}}
       v-list-tile-content
         v-list-tile-title.subheading(:class="(menu.to===$route.hash)? 'teal--text':''") {{menu.title}}
 </template>
@@ -91,7 +91,6 @@ import languages from '@/data/languages.json'
 export default class extends Vue {
   @Prop() value!: boolean
   private link(to: string) {
-    console.log(this.$t('menu'))
     this.$router.replace({ hash: 'none' })
     this.$router.replace({ hash: to })
   }
