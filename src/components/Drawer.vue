@@ -89,12 +89,12 @@ import languages from '@/data/languages.json'
 
 @Component({})
 export default class extends Vue {
-  @Prop() value!: boolean
+  @Prop() public value!: boolean
+  private readonly languages = languages
   private link(to: string) {
-    (this as any).$vuetify.goTo(to)
+    this.$vuetify.goTo(to)
     this.$router.replace({ hash: to })
   }
-  private readonly languages = languages
   private get curLocale() {
     return this.languages.find(e => e.locale === this.$i18n.locale) || { name: '', title: '' }
   }

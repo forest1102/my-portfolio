@@ -42,10 +42,6 @@ export default class extends Vue {
   private changeLocale(locale: string) {
     this.$router.push({ params: { locale } })
   }
-  private link(selector: string) {
-    this.$router.replace({ hash: '' })
-    this.$router.replace({ hash: selector })
-  }
 }
 </script>
 
