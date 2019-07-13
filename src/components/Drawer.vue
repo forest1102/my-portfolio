@@ -91,7 +91,7 @@ import languages from '@/data/languages.json'
 export default class extends Vue {
   @Prop() value!: boolean
   private link(to: string) {
-    this.$router.replace({ hash: 'none' })
+    (this as any).$vuetify.goTo(to)
     this.$router.replace({ hash: to })
   }
   private readonly languages = languages
