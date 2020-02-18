@@ -23,10 +23,6 @@ const router = new Router({
   base: process.env.BASE_URL || '',
   routes: [
     {
-      path: '/',
-      redirect: '/ja'
-    },
-    {
       path: '/:locale',
     }
   ],
@@ -44,13 +40,16 @@ const router = new Router({
   }
 })
 router.beforeEach((to, from, next) => {
-  if (to.params.locale === 'ja' || to.params.locale === 'en') {
+  const lang = (navigator.language.split('-')[0] === 'ja') ? 'ja' : 'en'
+  if (!to.params.locale) {
+    next('/' + lang)
+  }
+  else if (to.params.locale === 'ja' || to.params.locale === 'en') {
     i18n.locale = to.params.locale
     next()
   }
   else {
-
-    next('/ja')
+    next('/en')
   }
 })
 
